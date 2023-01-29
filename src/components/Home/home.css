@@ -1,0 +1,34 @@
+.custome-btn
+{
+    background-color: #F9A826 !important;
+    color: white !important;
+    border: none !important;
+    display: flex !important;
+    justify-content: start !important;
+}
+
+.sub-title{
+    justify-content: start;
+    display: flex;
+    font-size: 21px;
+    font-weight: 400;
+
+}
+
+.title{
+    display: flex;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.details{
+    text-align: justify;
+}
+
+
+.pizza-img{
+    height: 400px;
+}
+.left-side{
+    align-self: center;
+}

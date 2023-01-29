@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+
+
+}
+
+
+.logo {
+    width: 130px;
+    display: flex;
+
+}
+
+.navbar {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+
+.cart {
+    display: flex;
+    flex-direction: row;
+}
+
+.right-header {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: end;
+}
+
+.ri-shopping-cart-line {
+    font-size: 23px;
+}
+
+.signup {
+    text-decoration: none;
+    background: white;
+}
+
+.count-cart{
+   display: flex;
+    width: 20px;
+    height: 20px;
+    background: #F9A826;
+    border-radius: 50%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
