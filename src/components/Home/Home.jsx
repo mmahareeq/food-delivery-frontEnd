@@ -16,9 +16,6 @@ export default function Home() {
                             <p className='details'>Lorem, ipsum dolor sit amet consectetur adipisicing elit.Et dignissimos repellendus, dolores vero ut veritatis eum molestiae?
                            </p>
                         </div>
-                        
-                          
-                       
                         <Button   variant='primary' className='custome-btn'>Order Now</Button>
                     </Col>
                     <Col><img src={pizza} alt='pizza' className='pizza-img'></img></Col>
