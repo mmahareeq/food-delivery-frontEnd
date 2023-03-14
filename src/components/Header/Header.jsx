@@ -66,8 +66,8 @@ export default function Header() {
                     <i className="ri-shopping-cart-line "></i>
                     <span className='count-cart'>{count} </span>
                 </div>
-                <div role='button' onClick={ToggleHamburger} className='lg:hidden w-0'>
-                <i className="ri-menu-line ml-2 "></i>
+                <div role='button' onClick={ToggleHamburger} className='lg:hidden w-0' aria-hidden='true'>
+                <i className="ri-menu-line ml-2 " aria-label='open the menu'></i>
                 </div>
                  {
                 userinfo?.username ? <div className=' justify-center md:hidden sm:hidden xs:hidden lg:flex'>hi, {userinfo.username}</div> : <>

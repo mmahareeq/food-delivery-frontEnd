@@ -12,18 +12,10 @@ export default function Login() {
  const {loading, userinfo, error, success} = useSelector((state) => state.users);
  const nevigate = useNavigate();
 
-  useEffect(()=>{
-    console.log(loading , userinfo, error);
-    if(success)
-      { 
-        nevigate('/');
-      }
-  }, [nevigate, success, userinfo])
-
-
+  
    const initValues = {
-    email: '',
-    password: '',
+    email: null,
+    password: null,
    };
   const validate = (values)=>{
      const errors = {};
@@ -34,6 +26,7 @@ export default function Login() {
      }
 
      if(!values.password){
+      console.log('err')
       errors.password = 'password is required!';
      }
 
@@ -46,12 +39,23 @@ export default function Login() {
     onSubmit: (values) =>{
       dispatch(login(values)).unwrap();
     },
-  })    
+    isInitialValid: (values)=>console.log(values),
+  })  
+  
+  useEffect(()=>{
+    console.log(formik.isValid,formik.isValidating, formik.isInitialValid);
+    if(success)
+      { 
+        nevigate('/');
+      }
+  }, [nevigate, success, userinfo, formik.isValidating])
+
+
   return (
    
     <form onSubmit={formik.handleSubmit}>
             <div>
-                <img src={logo} alt='logo' className='logo'></img>
+                <img src={logo} alt='logo' className='logo w-100'></img>
             </div>
              
             {/* <label>Email</label> */}
@@ -61,6 +65,7 @@ export default function Login() {
              placeholder='Enter a your email' 
              value={formik.values.email}
              onChange={formik.handleChange}
+             required
              ></input>
              {formik.errors.email  ? <div className='text-red text-start w-80'>{formik.errors.email}</div>: null}
             {/* <label>Password</label> */}
@@ -69,12 +74,13 @@ export default function Login() {
              placeholder='Enter a password'
              className='mt-4'
              value={formik.values.password}
-             onChange={formik.handleChange} 
+             onChange={formik.handleChange}
+             required 
              ></input>
-      
+            {formik.errors.password  ? <div className='text-red text-start w-80'>{formik.errors.password}</div>: null}
           <span className='forget-password'>Forget Password?</span>
      
-          <button className='custome-btn' type='submit' disabled={loading}>{loading? <Spinner/> : 'Login'}</button>
+          <button className='custome-btn disabled:opacity-75' type='submit' disabled={loading || !formik.isValid}>{loading? <Spinner/> : 'Login'}</button>
           <p className='mt-5 signUp' > Don't have an account?  <Link to='/register' className='text-yallow font-medium no-underline'>SignUp</Link> Now</p>
      
     </form>
