@@ -4,11 +4,11 @@
     color: white !important;
     border: none !important;
     display: flex !important;
-    justify-content: start !important;
+    justify-content: flex-start !important;
 }
 
 .sub-title{
-    justify-content: start;
+    justify-content: flex-start;
     display: flex;
     font-size: 21px;
     font-weight: 400;
