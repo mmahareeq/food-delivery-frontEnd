@@ -53,7 +53,7 @@ export default function Login() {
 
   return (
    
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={formik.handleSubmit} className='form h-screen'>
             <div>
                 <img src={logo} alt='logo' className='logo w-100'></img>
             </div>

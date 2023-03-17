@@ -11,6 +11,7 @@ export default function AppRouting() {
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path='addItem' element={<AddItem></AddItem>}/>
+          <Route path='item/:id' element={<AddItem></AddItem>}/>
         </Route>
         <Route path='login' element={<Login/>}/>
         <Route path='register' element={<Signup/>}/>

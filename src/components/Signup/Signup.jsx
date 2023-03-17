@@ -75,9 +75,9 @@ export default function Signup() {
 
   return (
 
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form h-screen'>
       <div>
-        <img src={logo} alt='logo' className='logo'></img>
+        <img src={logo} alt='logo' className='logo w-100'></img>
       </div>
       {/* <label>Email</label> */}
       {inputs.map((input) => {

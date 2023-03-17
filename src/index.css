@@ -7,4 +7,8 @@
     .btn-primary {
       @apply text-yallow no-underline rounded-md border-solid border p-1 font-medium lg:justify-center	;
     }
+
+    .form {
+      @apply flex flex-col justify-center items-center;
+    }
   }
