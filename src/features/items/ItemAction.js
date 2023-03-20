@@ -24,11 +24,30 @@ export const getItemById = async(id)=>{
    }
 }
 
-export const updateItem = async(id, data, thunkAPI)=>{
+export const updateItem = async(id, data,)=>{
    try {
      const response = await axios.put(`/product/${id}`, data);
      return response.data;
    } catch (error) {
-    return  thunkAPI.rejectWithValue(error.response.data);
+    return  new Error(error);
    }
+}
+
+export const getAllItem = createAsyncThunk('item/getAll', async ({start, count, search}, thunkAPI)=>{
+  try {
+    const response = await axios.get(`/product?start=${start}&count=${count}&search=${search}`);
+    return response.data;
+  } catch (error) {
+     return thunkAPI.rejectWithValue(error.response.data);
+  }
+}) 
+
+export const deleteItem = async(id)=>{
+  try {
+    const response= await axios.delete(`/product/${id}`);
+    return response.data;
+  } catch (error) {
+    return new Error(error);
+  }
+
 }

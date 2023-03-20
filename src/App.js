@@ -2,7 +2,7 @@ import './App.css';
 import AppRouting from './AppRouting';
 function App() {
   return (
-    <div className="App">
+    <div className="App min-h-screen">
       <AppRouting />
     </div>
   );

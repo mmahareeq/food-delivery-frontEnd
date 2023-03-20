@@ -31,7 +31,7 @@ export default function AddItem() {
             if(!editMode)
               dispatch(addNewItem(formData)).unwrap();
             else 
-              dispatch(updateItem(id, formData)).unwrap();
+              updateItem(id, formData).then(()=>console.log('trueee'));
           },
     })
 
