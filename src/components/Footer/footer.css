@@ -4,3 +4,7 @@
     flex-direction: column;
     
 }
+
+.icons i{
+    font-size: 22px;
+}

@@ -5,10 +5,19 @@
 
 @layer components {
     .btn-primary {
-      @apply text-yallow no-underline rounded-md border-solid border p-1 font-medium lg:justify-center	;
+      @apply text-softorange no-underline rounded-md border-solid border p-1 font-medium lg:justify-center	;
     }
 
     .form {
       @apply flex flex-col justify-center items-center;
     }
+
+    .btn-primary { @apply  border border-softorange text-white flex h-10 font-normal	 justify-center items-center rounded-none hover:opacity-70;
+     }
+
+    .btn-secondary {
+      @apply   bg-softorange text-white flex h-10 font-normal	 justify-center items-center rounded-none hover:opacity-70;
+    }
+    
   }
+ 

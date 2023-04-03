@@ -7,9 +7,13 @@ module.exports = {
     extend: {},
     colors:{
       'red': '#b91c1c',
-      'yallow': '#F9A826',
-      'gray': '#ced4da',
-      'white': '#f8fafc'
+      'softorange': "#e1b168",
+      'darkgray': "#292e36",
+    'gray': "#555555",
+    'darkblue': "#343942",
+    'lightpink': "#fff8f5",
+    'white': "#ffffff",
+    'black': '#000'
     },
     screens: {
       'md': '776px',

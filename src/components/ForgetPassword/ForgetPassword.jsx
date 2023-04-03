@@ -1,12 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
-import './login.css'
-import logo from '../../assets/images/logo.png'
+
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';
-import { login } from '../../features/users/userAction';
+import { forgetPassword } from '../../features/users/userAction';
 import { useFormik } from 'formik';
-export default function Login() {
+export default function ForgetPassword() {
 
  const dispatch = useDispatch();
  const {loading, userinfo, error, success} = useSelector((state) => state.users);
@@ -15,7 +14,6 @@ export default function Login() {
   
    const initValues = {
     email: null,
-    password: null,
    };
   const validate = (values)=>{
      const errors = {};
@@ -24,12 +22,6 @@ export default function Login() {
      }else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)){
         errors.email = 'Invalid email address';
      }
-
-     if(!values.password){
-      console.log('err')
-      errors.password = 'password is required!';
-     }
-
      return errors;
   }
   // formik 
@@ -37,7 +29,9 @@ export default function Login() {
     initialValues: initValues,
     validate,
     onSubmit: (values) =>{
-      dispatch(login(values)).unwrap();
+        forgetPassword(values).then((data)=>{
+           console.log(data)
+        }).catch(error=> console.log(error))
     },
     isInitialValid: (values)=>console.log(values),
   })  
@@ -54,9 +48,7 @@ export default function Login() {
   return (
    
     <form onSubmit={formik.handleSubmit} className='form h-screen'>
-            <div>
-                <img src={logo} alt='logo' className='logo w-100'></img>
-            </div>
+            
              
             {/* <label>Email</label> */}
             {error?.message ? <div className='ErrorMessage pl-1'>Error: {error.message}</div>: null}
@@ -69,19 +61,10 @@ export default function Login() {
              ></input>
              {formik.errors.email  ? <div className='text-red text-start w-80'>{formik.errors.email}</div>: null}
             {/* <label>Password</label> */}
-            <input id='password'
-            type='password'
-             placeholder='Enter a password'
-             className='mt-4'
-             value={formik.values.password}
-             onChange={formik.handleChange}
-             required 
-             ></input>
-            {formik.errors.password  ? <div className='text-red text-start w-80'>{formik.errors.password}</div>: null}
-          <span className='forget-password'><Link to='/forgetpassword'> Forget Password?</Link></span>
+      
      
-          <button className='custome-btn disabled:opacity-75' type='submit' disabled={loading || !formik.isValid}>{loading? <Spinner/> : 'Login'}</button>
-          <p className='mt-5 signUp' > Don't have an account?  <Link to='/register' className='text-yallow font-medium no-underline'>SignUp</Link> Now</p>
+          <button className='custome-btn disabled:opacity-75' type='submit' disabled={loading || !formik.isValid}>{loading? <Spinner/> : 'send'}</button>
+         
      
     </form>
 

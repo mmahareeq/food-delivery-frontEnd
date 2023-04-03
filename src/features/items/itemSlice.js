@@ -14,7 +14,8 @@ const itemSlice = createSlice({
     reducers:{},
     extraReducers(builder){
         builder.addCase(addNewItem.fulfilled, (state , action)=>{
-           state.items = [...action.payload];
+            console.log(action)
+           state.items = [...state.items, action.payload.product];
            state.success= true;
            state.loading = false;
           
@@ -24,7 +25,7 @@ const itemSlice = createSlice({
             state.loading = true;
         })
         .addCase(getAllItem.fulfilled, (state, action)=>
-        {
+        {   console.log(action)
             state.items = [...action.payload];
             state.success= true;
             state.error = false;

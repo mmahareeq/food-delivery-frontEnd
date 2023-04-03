@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import CardItem from '../../components/cardItem/CardItem';
 import { getAllItem } from '../../features/items/ItemAction';
+import Hero from '../../components/Hero/Hero';
 export default function Menu() {
     const dispatch = useDispatch();
     const {items, loading}= useSelector((state)=> state.item)
@@ -12,9 +13,9 @@ export default function Menu() {
         }))
     }, [])
   return (
-    <div className='container'>
-        <h3 className='mt-3'>Featured Item</h3>
-        <div className='flex justify-end'>
+    <div className=''>
+       <Hero hero='Menu'/>
+        <div className='flex justify-end mt-2 container'>
             <input type='text' placeholder='Search' className='w-25' />
         </div>
         <div className='flex flex-row flex-wrap	gap-3'>

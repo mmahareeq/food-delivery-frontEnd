@@ -10,12 +10,13 @@
     justify-content: center;
     flex-grow: 1;
     margin-right: 0.5rem;
+    font-weight: 200;
 }
 
 .active{
     text-decoration: underline;
-    text-decoration-color: #F9A826;
-    text-decoration-thickness:3px ;
+    text-decoration-color: #e1b168;
+    text-decoration-thickness:2px ;
 }
 
 .right-header {
@@ -30,12 +31,12 @@
 
      width: 20px;
      height: 20px;
-     background: #F9A826;
+     background: #e1b168;
      border-radius: 50%;
      text-align: center;
      justify-content: center;
      align-items: center;
  }
  .ri-shopping-cart-line, .ri-menu-line {
-    font-size: 23px;
+    font-size: 22px;
 }
