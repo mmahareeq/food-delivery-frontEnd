@@ -3,7 +3,7 @@ import logo from "../../assets/images/logo.png";
 import "./footer.css";
 export default function Footer() {
   return (
-    <div className="bg-darkblue  text-white border-t border-gray font-light">
+    <div className="bg-darkblue text-white border-t border-gray font-light">
       <div className=" container flex justify-between">
         <img src={logo} className="w-36"></img>
         <div className="icons self-center flex gap-3">
@@ -12,7 +12,7 @@ export default function Footer() {
           <i class="ri-pinterest-fill"></i>
         </div>
       </div>
-      <div className="flex flex-row justify-between mt-4  container">
+      <div className="flex flex-row flex-wrap justify-between mt-4  container">
       <div>
       <h6 className="border-y border-softorange">contact</h6>
         <p>5 Rue Dalou, 75015 Paris</p>
@@ -25,11 +25,9 @@ export default function Footer() {
           </a>
         </p>
       </div>
-      <div>
-        <p className="text-center">Join our mailing list for updates,</p>
-
-        <p className="text-center">Get news & offers events.</p>
-
+      <div className='sm:mb-4 lg:mb-0 md:mb-4 xs:mb-4'>
+        <p className="lg:text-center md:text-left sm:text-left xs:text-left">Join our mailing list for updates,</p>
+        <p className="lg:text-center md:text-left">Get news & offers events.</p>
         <div className="w-100 flex">
           <input type="email" required placeholder="Email" className=""/>
 

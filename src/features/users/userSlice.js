@@ -17,10 +17,11 @@ const userSlice = createSlice({
            state.userinfo = action.payload;
            state.success= true;
            state.loading = false;
+           state.error = false;
           
         })
         .addCase(signup.pending, (state , action)=>{
-            state.error = null;
+            state.error = false;
             state.loading = true;
             
         })

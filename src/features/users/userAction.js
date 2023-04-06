@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-export const signup = createAsyncThunk('users/signup', async ({ username, email, password, confirmPassword }) => {
+export const signup = createAsyncThunk('users/signup', async ({ username, email, password, confirmPassword }, thunkAPI) => {
   try {
     const response = await axios.post('/session/signup',
       { username, email, password, confirmPassword },
@@ -13,7 +13,7 @@ export const signup = createAsyncThunk('users/signup', async ({ username, email,
 
     return response.data;
   } catch (error) {
-    return error;
+    return  thunkAPI.rejectWithValue(error.response.data);
   }
 });
 

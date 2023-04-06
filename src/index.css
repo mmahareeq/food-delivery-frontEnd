@@ -19,5 +19,8 @@
       @apply   bg-softorange text-white flex h-10 font-normal	 justify-center items-center rounded-none hover:opacity-70;
     }
     
+    input {
+      @apply  border p-1 border-lightgray rounded-none font-normal focus:border focus:outline-none  focus:border-softorange 
+    }
   }
  

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addNewItem, getItemById, updateItem } from "../ItemAction";
 import { useParams, useNavigate } from "react-router-dom";
 import { getAllCategories } from "../../categories/categoryAction";
-
+import Hero from "../../../components/Hero/Hero";
 export default function AddItem() {
   const { id } = useParams();
   const [idItem, setIdItem] = useState("");
@@ -61,14 +61,16 @@ export default function AddItem() {
     dispatch(getAllCategories()).then((data) => console.log(data));
   }, []);
   return (
-    <div className="container">
-      <h3 className="mt-3">Add New Items</h3>
-      <form className="flex flex-wrap" onSubmit={formik.handleSubmit}>
+    <div >
+      <Hero hero='Add New Item'></Hero>
+      {/* <h3 className="mt-3">Add New Items</h3> */}
+      <form className="flex flex-wrap container mt-2" onSubmit={formik.handleSubmit}>
         <div className="w-full md:w-1/2 mb-2">
           <label htmlFor="title" className="block">
             Title
           </label>
           <input
+            className="w-7/12"
             id="title"
             type="string"
             value={formik.values.title}
@@ -81,6 +83,7 @@ export default function AddItem() {
             Price
           </label>
           <input
+            className="w-7/12"
             id="price"
             type="number"
             value={formik.values.price}
@@ -92,6 +95,7 @@ export default function AddItem() {
             Discount
           </label>
           <input
+            className="w-7/12"
             id="discount"
             type="number"
             value={formik.values.discount}
@@ -103,7 +107,7 @@ export default function AddItem() {
             Upload Image
           </label>
           <input
-            className="pt-1"
+            className="pt-1 w-7/12"
             id="file"
             name="file"
             type="file"
@@ -117,7 +121,7 @@ export default function AddItem() {
           <label htmlFor="category" className="block">
             Category
           </label>
-          <select name="category" id="category" className=" w-80 h-10 "
+          <select name="category" id="category" className=" w-7/12 h-10 border border-lightgray"
             value={formik.values.category}  onChange={(event)=> formik.setFieldValue('category', event.target.value)}>
             {categories.map((category) => {
               return <option value={category._id}>{category.name}</option>;
@@ -125,20 +129,20 @@ export default function AddItem() {
           </select>
         </div>
         <img src={formik.values.img} className="w-12"></img>
-        <div className="w-full mb-2">
+        <div className="w-full md:w-1/2 mb-2">
           {" "}
           <label htmlFor="desc" className="block">
             {" "}
             description
           </label>
-          <textarea id="desc" className="w-2/5"></textarea>
+          <textarea id="desc" className="w-7/12 border"></textarea>
         </div>
         <div className=" flex flex-row  mt-4">
-          <button className="btn-primary w-24" type="submit">
+          <button className="btn-secondary w-24" type="submit">
             {!editMode ? "Add" : "Edit"}
           </button>
           <button
-            className="btn-secondary w-24 ml-2"
+            className="btn-primary text-black w-24 ml-2"
             type="button"
             onClick={() => nevigate("/item")}
           >

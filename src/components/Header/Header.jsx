@@ -45,8 +45,8 @@ export default function Header() {
   };
   return (
     <>
-      <header className=" w-full flex justify-between items-center flex-col bg-darkblue">
-        <div className=" container w-full flex justify-between items-center border-b border-b-gray p-3">
+      <header className=" w-full flex justify-between items-center flex-col bg-darkblue ">
+        <div className=" container w-full flex justify-between items-center border-b border-b-gray p-3 lg:flex-row sm:flex-col xs:flex-col ">
           <p className="border border-softorange p-2 mb-0 text-white font-light">
             Call - 987 654 321
           </p>
@@ -70,8 +70,8 @@ export default function Header() {
               <i className="ri-menu-line ml-2 " aria-label="open the menu"></i>
             </div>
             {userinfo?.username ? (
-              <div className=" justify-center md:hidden sm:hidden xs:hidden lg:flex">
-                hi, {userinfo.username}
+              <div className=" justify-center text-white md:hidden sm:hidden xs:hidden lg:flex">
+                Hi, {userinfo.username}
               </div>
             ) : (
               <>

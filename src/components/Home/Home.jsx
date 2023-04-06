@@ -46,12 +46,12 @@ export default function Home() {
             </button>
           </div>
           <div>
-            <img src={resturant} alt="pizza" className="pizza-img"></img>
+            <img src={resturant} alt="pizza" className="pizza-img  "></img>
           </div>
         </div>
 
-        <div className="flex flex-row w-full container mt-3 gap-5">
-          <div className="flex flex-col w-2/5 mt-3">
+        <div className="flex flex-row w-full container mt-3  flex-wrap">
+          <div className="flex flex-col lg:w-2/5">
             <h4 className="border-y border-y-softorange">Menu</h4>
             <h5>Try Our Special Offers</h5>
             <p className="font-light text-gray">
@@ -67,7 +67,7 @@ export default function Home() {
             </button>
           </div>
 
-          <div className="flex flex-col flex-wrap w-full ">
+          <div className="flex flex-col  lg:w-3/5">
             {items.map((item, index) => {
               if (index < 4) return (<div className="flex flex-row  align-items-center justify-content-evenly ">
               <div className="flex flex-row align-items-center">

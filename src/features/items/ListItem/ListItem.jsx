@@ -64,10 +64,10 @@ export default function ListItem() {
     }
   return (
     <div className='container'>{lenItem>0 ?<> 
-    <div className='flex justify-end mb-2'>
+    <div className='flex justify-end mb-2 mt-2'>
         
         <input type='text' placeholder='Search' className='w-25 mr-1' onInput={SearchMethod}/> 
-        <button type='button' className='btn-primary text-white bg-yallow' onClick={()=>navigate('/item/add')}>Add New Item</button>
+        <button type='button' className='btn-secondary w-max p-1' onClick={()=>navigate('/item/add')}>Add New Item</button>
     </div>
     <table  className=" w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className='text-center'>

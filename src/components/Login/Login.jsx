@@ -53,26 +53,27 @@ export default function Login() {
 
   return (
    
-    <form onSubmit={formik.handleSubmit} className='form h-screen'>
+    <form onSubmit={formik.handleSubmit} className='form h-screen bg-lightpink'>
             <div>
                 <img src={logo} alt='logo' className='logo w-100'></img>
             </div>
              
             {/* <label>Email</label> */}
-            {error?.message ? <div className='ErrorMessage pl-1'>Error: {error.message}</div>: null}
+            {error?.message ? <div className='ErrorMessage pl-1 w-80'>Error: {error.message}</div>: null}
             <input id='email'
              type='email'
              placeholder='Enter a your email' 
              value={formik.values.email}
              onChange={formik.handleChange}
              required
+             className='w-80 p-2'
              ></input>
              {formik.errors.email  ? <div className='text-red text-start w-80'>{formik.errors.email}</div>: null}
             {/* <label>Password</label> */}
             <input id='password'
             type='password'
              placeholder='Enter a password'
-             className='mt-4'
+             className='mt-4 w-80 p-2'
              value={formik.values.password}
              onChange={formik.handleChange}
              required 
@@ -80,8 +81,8 @@ export default function Login() {
             {formik.errors.password  ? <div className='text-red text-start w-80'>{formik.errors.password}</div>: null}
           <span className='forget-password'><Link to='/forgetpassword'> Forget Password?</Link></span>
      
-          <button className='custome-btn disabled:opacity-75' type='submit' disabled={loading || !formik.isValid}>{loading? <Spinner/> : 'Login'}</button>
-          <p className='mt-5 signUp' > Don't have an account?  <Link to='/register' className='text-yallow font-medium no-underline'>SignUp</Link> Now</p>
+          <button className='btn-secondary p-2 disabled:opacity-75 w-80' type='submit' disabled={loading || !formik.isValid}>{loading? <Spinner/> : 'Login'}</button>
+          <p className='mt-5 signUp' > Don't have an account?  <Link to='/register' className='text-softorange font-medium no-underline'>SignUp</Link> Now</p>
      
     </form>
 
