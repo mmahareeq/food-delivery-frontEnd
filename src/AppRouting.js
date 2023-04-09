@@ -9,6 +9,7 @@ import ListItem from './features/items/ListItem/ListItem';
 import ForgetPassword from './components/ForgetPassword/ForgetPassword';
 import Menu from './pages/Menu/Menu';
 import Contact from './pages/Contact/Contact';
+import Cart from './pages/Cart/Cart';
 export default function AppRouting() {
   return (
     <Routes>
@@ -20,6 +21,7 @@ export default function AppRouting() {
           <Route path='item/:id' element={<AddItem></AddItem>}/>
           <Route path='/forgetpassword' element={<ForgetPassword/>}/>
           <Route path='/contact' element={<Contact/>}/>
+          <Route path='/cart' element={<Cart/>}/>
         </Route>
         <Route path='login' element={<Login/>}/>
         <Route path='register' element={<Signup/>}/>

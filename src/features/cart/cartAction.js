@@ -5,16 +5,16 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 export const getCart = createAsyncThunk('cart/getCart', async(thunkAPI) =>{
     try {
         const response = await axios.get('/cart');
-        return response.data.data;
+        return response.data.cart;
 
     } catch (error) {
         return thunkAPI.rejectWithValue(error);
     }
 });
 
-export const addToCart = createAsyncThunk('cart/add', async(data, thunkAPI)=>{
+export const addToCart = createAsyncThunk('cart/addToCart', async(data, thunkAPI)=>{
     try {
-        const response = await axios.post('/cart', data);
+        const response = await axios.put('/cart', data);
 
         return response.data;
     } catch (error) {

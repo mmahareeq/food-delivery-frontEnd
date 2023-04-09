@@ -18,7 +18,7 @@ export default function Menu() {
         <div className='flex justify-end mt-2 container'>
             <input type='text' placeholder='Search' className='w-25' />
         </div>
-        <div className='flex flex-row flex-wrap	gap-3'>
+        <div className='flex flex-row flex-wrap	gap-3 justify-around'>
            {items.map((item, index)=>{
             return <CardItem item={item}></CardItem>
            })}

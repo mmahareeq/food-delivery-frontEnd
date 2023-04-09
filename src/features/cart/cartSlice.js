@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCart } from './cartAction';
+import { getCart, addToCart } from './cartAction';
 
 const initialState = {
-    cart: {},
+    cart: [],
+    count: 0,
     loading: false,
     error: '',
     success: false,
@@ -18,9 +19,24 @@ const cartSlice = createSlice({
             state.loading = false;
             state.error = false;
             state.success = true;
-        })}
+        })
+        .addCase(addToCart.pending, (state , action)=>{
+            state.loading = true;
+            state.error = false;
+            state.success = false;
+        })
+        .addCase(addToCart.fulfilled, (state , action)=>{
+            console.log(action)
+            state.cart = action.payload.cart;
+            state.count = action.payload.count;
+            state.loading = false;
+            state.error = false;
+            state.success = true;
+        })
+        
+    }
+        
 });
 
-console.log(initialState);
 
 export default cartSlice.reducer;

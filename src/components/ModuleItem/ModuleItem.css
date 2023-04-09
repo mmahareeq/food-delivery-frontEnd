@@ -1,7 +1,14 @@
 .model{
-    width: 36rem;
+    width: 38rem;
 }
 
 .img-model{
     width: 15rem;
+}
+
+.close-icon{
+    font-size: 27px;
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
 }
