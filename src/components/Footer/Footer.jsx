@@ -14,7 +14,7 @@ export default function Footer() {
       </div>
       <div className="flex flex-row flex-wrap justify-between mt-4  container">
       <div>
-      <h6 className="border-y border-softorange">contact</h6>
+      <h6 className="border-y border-softorange w-max">contact</h6>
         <p>5 Rue Dalou, 75015 Paris</p>
         <p>
           <span className="accent-text">Call</span> - +33 156 78 89 56
@@ -35,7 +35,7 @@ export default function Footer() {
         </div>
       </div>
       <div>
-        <h6 className="border-y border-softorange">working hours</h6>
+        <h6 className="border-y border-softorange w-max">working hours</h6>
         <p>
           <span className="accent-text">Mon-Fri</span>: 7.00am – 6.00pm
         </p>

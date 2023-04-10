@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './signup.css'
 import logo from '../../assets/images/logo.png'
-import FormInput from '../FormInput/FormInput';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import Spinner from '../Spinner/Spinner';

@@ -10,24 +10,30 @@ import ForgetPassword from './components/ForgetPassword/ForgetPassword';
 import Menu from './pages/Menu/Menu';
 import Contact from './pages/Contact/Contact';
 import Cart from './pages/Cart/Cart';
+import RequiredAuth from './components/RequiredAuth/index';
+import { useSelector } from 'react-redux';
+
 export default function AppRouting() {
+  const {userinfo} = useSelector(state=> state.users);
   return (
     <Routes>
-        <Route path='/' element={<Layout/>}>
-          <Route index element={<Home/>}/>
-          <Route path='menu' element={<Menu/>}/>
-          <Route path='item' element={<ListItem/>}/>
-          <Route path='item/add' element={<AddItem></AddItem>}/>
-          <Route path='item/:id' element={<AddItem></AddItem>}/>
-          <Route path='/forgetpassword' element={<ForgetPassword/>}/>
-          <Route path='/contact' element={<Contact/>}/>
-          <Route path='/cart' element={<Cart/>}/>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path='menu' element={<Menu />} />
+        <Route path='/forgetpassword' element={<ForgetPassword />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/cart' element={<Cart />} />
+
+        <Route element={<RequiredAuth allowRole='admin' />}>
+          <Route path='item' element={<ListItem />} />
+            <Route path='item/add' element={<AddItem></AddItem>} />
+            <Route path='item/:id' element={<AddItem></AddItem>} />
+           </Route>
         </Route>
-        <Route path='login' element={<Login/>}/>
-        <Route path='register' element={<Signup/>}/>
-        
-        <Route path='cart'/>
-        <Route path='review'/>
+      <Route path='login' element={<Login />} />
+      <Route path='register' element={<Signup />} />
+
+     
     </Routes>
   )
 }

@@ -5,7 +5,8 @@ export default function CardItem({ item }) {
   console.log(item)
   const [count, setCount] = useState(1);
   const [showModel, setShowModel] = useState(false);
- 
+  
+  
   return (
     <div className="bg-white p-3">
       <img src={item.img} className="h-44	w-40" />
@@ -14,21 +15,6 @@ export default function CardItem({ item }) {
         <div className="flex justify-content-between">
         <p className="text-gray">{item.price} $</p>
         <div className="star-rating">
-          {/* {[...Array(5)].map((star, index) => {
-            index += 1;
-            return (
-              <button
-                type="button"
-                key={index}
-                // className={index <= (hover || rating) ? "on" : "off"}
-                // onClick={() => setRating(index)}
-                // onMouseEnter={() => setHover(index)}
-                // onMouseLeave={() => setHover(rating)}
-              >
-                <span className="star">&#9733;</span>
-              </button>
-            );
-          })} */}
             <span className="star text-softorange">&#9733; {item?.Rating ? item.Rating  : 0}</span>
         </div>
         </div>

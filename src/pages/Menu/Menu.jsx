@@ -16,6 +16,7 @@ export default function Menu() {
     <div className=''>
        <Hero hero='Menu'/>
         <div className='flex justify-end mt-2 container'>
+            
             <input type='text' placeholder='Search' className='w-25' />
         </div>
         <div className='flex flex-row flex-wrap	gap-3 justify-around'>

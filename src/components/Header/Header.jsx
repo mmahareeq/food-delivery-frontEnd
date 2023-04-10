@@ -33,7 +33,7 @@ export default function Header() {
 
   useEffect(() => {
     setCount(cart?.products?.length || 0);
-  }, [cart]);
+  }, [cart, userinfo]);
 
   const moveToCart = (event) => {
     event.preventDefault();

@@ -8,11 +8,22 @@ export default function ModuleItem(props) {
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
   const [showModel, setShowModel] = useState(true);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [rating, setRating] = useState(0);
   const increseCount = () => {
     setCount((count) => count + 1);
   };
   const decreseCount = () => {
     setCount((prevCount) => prevCount - 1);
+  };
+  const getColor = (index) => {
+    if (hoverRating >= index) {
+      return '#e9ed11';
+    } else if (!hoverRating && rating >= index) {
+      return '#e9ed11';
+    }
+
+    return '#edede8';
   };
 
   const addNewItem = async()=>{
@@ -45,21 +56,6 @@ export default function ModuleItem(props) {
                         {item.price} $
                       </p>
                         <div>
-                        {/* {[...Array(5)].map((star, index) => {
-                          index += 1;
-                          return (
-                            <button
-                              type="button"
-                              key={index}
-                              // className={index <= (hover || rating) ? "on" : "off"}
-                              // onClick={() => setRating(index)}
-                              // onMouseEnter={() => setHover(index)}
-                              // onMouseLeave={() => setHover(rating)}
-                            >
-                              <span className="star">&#9733;</span>
-                            </button>
-                          );
-                        })} */}
                          <span className="star text-softorange">&#9733; {item?.Rating ? item.Rating  : 0}</span>
                         </div>
                       </div>
@@ -107,10 +103,10 @@ export default function ModuleItem(props) {
                             <button
                               type="button"
                               key={index}
-                              // className={index <= (hover || rating) ? "on" : "off"}
-                              // onClick={() => setRating(index)}
-                              // onMouseEnter={() => setHover(index)}
-                              // onMouseLeave={() => setHover(rating)}
+                               onClick={() => setRating(index)}
+                              onMouseEnter={() =>  setHoverRating(index)}
+                              onMouseLeave={() =>  setHoverRating(0)}
+                               style={{ color: getColor(index) }}
                             >
                               <span className="star">&#9733;</span>
                             </button>

@@ -52,7 +52,7 @@ export default function Home() {
 
         <div className="flex flex-row w-full container mt-3  flex-wrap">
           <div className="flex flex-col lg:w-2/5">
-            <h4 className="border-y border-y-softorange">Menu</h4>
+            <h4 className="border-y border-y-softorange w-max">Menu</h4>
             <h5>Try Our Special Offers</h5>
             <p className="font-light text-gray">
             Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content making it look like readable English
