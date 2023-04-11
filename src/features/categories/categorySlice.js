@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getAllCategories } from './categoryAction'
 
 const initialState = {
-    categories: [],
+    categories: [{name: 'All'}],
     loading: false,
     error: '',
     success: false,
@@ -14,7 +14,8 @@ const categorySlice = createSlice({
     reducers:{},
     extraReducers(builder){
         builder.addCase(getAllCategories.fulfilled, (state , action)=>{
-           state.categories = action.payload;
+           state.categories =[ ...action.payload];
+           state.categories.splice(0,0,{name: 'All'})
            state.success= true;
            state.loading = false;
           

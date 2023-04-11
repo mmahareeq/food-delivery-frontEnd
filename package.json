@@ -1,7 +1,7 @@
 {
   "name": "food-delivery-app",
   "version": "0.1.0",
-  "proxy": "https://food-delivery-99a8.onrender.com",
+  "proxy": "http://localhost:3500",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
