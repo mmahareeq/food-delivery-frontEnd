@@ -107,7 +107,7 @@ export default function Signup() {
      ></input>
     {formik.errors.confirmPassword  ? <div className='text-red text-start w-80'>{formik.errors.confirmPassword}</div>: null}
 
-  <button className='btn-secondary p-2 mt-2 disabled:opacity-75 ' type='submit' disabled={loading || !formik.isValid}> {loading? <Spinner/> : 'SignUp'}</button>
+  <button className='btn-secondary p-2 mt-2 disabled:opacity-75 w-80 ' type='submit' disabled={loading || !formik.isValid}> {loading? <Spinner/> : 'SignUp'}</button>
       <p className='mt-5 signUp' > Already have a account ?<Link to='/login' className='text-softorange font-medium no-underline'>LogIn</Link> Now</p>
     </form>
   )
