@@ -3,8 +3,8 @@ import { getAllItem, deleteItem } from "../ItemAction";
 import { useNavigate } from "react-router-dom";
 import Pagination from "../../../components/Pagination/Pagination";
 import { useSelector, useDispatch } from "react-redux";
-import Spinner from "../../../components/Spinner/Spinner";
-import Hero from "../../../components/Hero/Hero"; 
+import Spinner from '../../../shared/Spinner/Spinner';
+import Hero from "../../../shared/Hero/Hero";
 
 export default function ListItem() {
   const [lenItem, setLenItem] = useState(0);

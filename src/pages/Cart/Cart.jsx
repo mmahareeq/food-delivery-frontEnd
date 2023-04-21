@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../../components/Hero/Hero";
+import Hero from "../../shared/Hero/Hero";
 import { getCart } from "../../features/cart/cartAction";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -18,7 +18,7 @@ export default function Cart() {
               {cart.products.map((item) => {
                 return (
                   <div className="flex flex-row border border-lightgray shadow mt-2">
-                    <img src={item.product.img} className="w-24"></img>
+                    <img src={item.product.img} className="w-24 h-24 p-2"></img>
                     <div className="flex justify-around align-items-center w-full">
                       <h5>{item.product.title}</h5>
                       <p>{item.product.price} $</p>

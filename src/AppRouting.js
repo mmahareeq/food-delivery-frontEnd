@@ -20,7 +20,6 @@ export default function AppRouting() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='menu' element={<Menu />} />
-        <Route path='/forgetpassword' element={<ForgetPassword />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/cart' element={<Cart />} />
 
@@ -32,6 +31,7 @@ export default function AppRouting() {
         </Route>
       <Route path='login' element={<Login />} />
       <Route path='register' element={<Signup />} />
+      <Route path='/forgetpassword' element={<ForgetPassword />} />
 
      
     </Routes>

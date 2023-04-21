@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import {  Navigate, Outlet } from "react-router-dom";
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../../shared/Spinner/Spinner';
 export default function ({allowRole}) {
       const {userinfo, loading} = useSelector(state=>state.users);
     

@@ -60,18 +60,18 @@ export default function Home() {
             <img src={desert} ></img>
             <button
               variant="primary"
-              className="btn-primary  text-black mt-2"
+              className="btn-primary  text-black mt-2 w-50"
               onClick={() => navigate("/menu")}
             >
               See All dishes
             </button>
           </div>
 
-          <div className="flex flex-col  lg:w-3/5">
+          <div className="flex flex-col  lg:w-3/5 mt-5">
             {items.map((item, index) => {
               if (index < 4) return (<div className="flex flex-row  align-items-center justify-content-evenly ">
-              <div className="flex flex-row align-items-center">
-              <img src={item.img} className="rounded w-24 "></img>
+              <div className="flex flex-row align-items-center mb-2">
+              <img src={item.img} className="rounded-circle w-24 h-28 "></img>
               
               <p className="mb-0">{item.title} </p>
               <p className="border-b-2 mb-4 border-dotted w-80 border-b-gray	"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>

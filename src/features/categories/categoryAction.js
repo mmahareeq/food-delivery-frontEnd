@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getAllCategories = createAsyncThunk('categories/getAll', async ( thunkAPI) => {
     try {
-      const response = await axios.get('/category',
+      const response = await axios.get('/categories',
         {
           headers: {
             'Content-Type': 'application/json',

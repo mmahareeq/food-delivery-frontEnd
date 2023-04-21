@@ -3,7 +3,7 @@ import './login.css'
 import logo from '../../assets/images/logo.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../../shared/Spinner/Spinner';
 import { login } from '../../features/users/userAction';
 import { useFormik } from 'formik';
 export default function Login() {

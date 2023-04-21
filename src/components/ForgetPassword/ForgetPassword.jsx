@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
+import { useNavigate } from 'react-router-dom';
+import Spinner from '../../shared/Spinner/Spinner';
 import { forgetPassword } from '../../features/users/userAction';
 import { useFormik } from 'formik';
 export default function ForgetPassword() {
@@ -46,13 +46,13 @@ export default function ForgetPassword() {
 
 
   return (
-   
+    
     <form onSubmit={formik.handleSubmit} className='form h-screen'>
-            
              
             {/* <label>Email</label> */}
             {error?.message ? <div className='ErrorMessage pl-1'>Error: {error.message}</div>: null}
             <input id='email'
+              className=' w-80'
              type='email'
              placeholder='Enter a your email' 
              value={formik.values.email}
@@ -63,10 +63,12 @@ export default function ForgetPassword() {
             {/* <label>Password</label> */}
       
      
-          <button className='custome-btn disabled:opacity-75' type='submit' disabled={loading || !formik.isValid}>{loading? <Spinner/> : 'send'}</button>
+          <button className=' btn-secondary p-2 mt-2 disabled:opacity-75 w-80' type='submit' disabled={loading || !formik.isValid}>{loading? <Spinner/> : 'send'}</button>
          
      
     </form>
 
   )
 }
+// Reset Your Password
+// You will receive a password reset email soon.Follow the link in the email to reset your password.

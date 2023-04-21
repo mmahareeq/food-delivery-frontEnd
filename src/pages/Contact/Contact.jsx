@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../../components/Hero/Hero'
+import Hero from "../../shared/Hero/Hero";
 export default function Contact() {
   return (
     <div>

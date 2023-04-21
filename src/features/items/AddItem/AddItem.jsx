@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addNewItem, getItemById, updateItem } from "../ItemAction";
 import { useParams, useNavigate } from "react-router-dom";
 import { getAllCategories } from "../../categories/categoryAction";
-import Hero from "../../../components/Hero/Hero";
+import Hero from "../../../shared/Hero/Hero";
 export default function AddItem() {
   const { id } = useParams();
   const [idItem, setIdItem] = useState("");
