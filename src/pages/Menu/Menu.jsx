@@ -17,7 +17,7 @@ export default function Menu() {
 
     useEffect(()=>{
         dispatch(getAllItem({
-            start:1, count:10, search: search
+            start:1, count:10, search: search, category: ''
         }))
     }, [search])
   return (

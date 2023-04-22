@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { getAllItem, deleteItem } from "../ItemAction";
 import { useNavigate } from "react-router-dom";
-import Pagination from "../../../components/Pagination/Pagination";
+import Pagination from "../../../shared/Pagination/Pagination";
 import { useSelector, useDispatch } from "react-redux";
 import Spinner from '../../../shared/Spinner/Spinner';
 import Hero from "../../../shared/Hero/Hero";

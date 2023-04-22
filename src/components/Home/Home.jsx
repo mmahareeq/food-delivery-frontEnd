@@ -18,6 +18,7 @@ export default function Home() {
         start: 1,
         count: 10,
         search: "",
+        category: ''
       })
     );
   }, []);
@@ -69,7 +70,7 @@ export default function Home() {
 
           <div className="flex flex-col  lg:w-3/5 mt-5">
             {items.map((item, index) => {
-              if (index < 4) return (<div className="flex flex-row  align-items-center justify-content-evenly ">
+              if (index < 5) return (<div className="flex flex-row  align-items-center justify-content-evenly ">
               <div className="flex flex-row align-items-center mb-2">
               <img src={item.img} className="rounded-circle w-24 h-28 "></img>
               

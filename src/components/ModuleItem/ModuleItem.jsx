@@ -119,7 +119,7 @@ export default function ModuleItem(props) {
                         </div>
                       </div>
 
-                      <p className="mt-2"> Category: {item.category.name}</p>
+                      <p className="mt-2"> Category: {item.category[0].name}</p>
                     </div>
                   </div>
                 </div>

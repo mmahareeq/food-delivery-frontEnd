@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { getAllCategories } from '../../features/categories/categoryAction';
 import { useSelector, useDispatch } from 'react-redux';
-
+import { getAllItem } from '../../features/items/ItemAction';
 
 export default function CategoryList() {
     const {categories, loading} = useSelector(state=>state.categories);
@@ -11,11 +11,17 @@ export default function CategoryList() {
     useEffect(()=>{
         dispatch(getAllCategories()).then(data=> console.log(categories));
     },[]);
-
+    
     const filterOnCategory = async (value)=>{
       setCategorySelecrted(value);
-       console.log(categorySelected);
     }
+
+    useEffect(()=>{
+      dispatch(getAllItem({
+          start:1, count:10, search: '', category: categorySelected === 'All' ? '' : categorySelected
+      }))
+  }, [categorySelected])
+
   return (
     <div>
         <ul className='flex flex-row gap-1 m-0 p-0'>

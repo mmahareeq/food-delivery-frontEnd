@@ -33,9 +33,10 @@ export const updateItem = async(id, data,)=>{
    }
 }
 
-export const getAllItem = createAsyncThunk('item/getAll', async ({start, count, search}, thunkAPI)=>{
+export const getAllItem = createAsyncThunk('item/getAll', async ({start, count, search, category}, thunkAPI)=>{
   try {
-    const response = await axios.get(`/products?start=${start}&count=${count}&search=${search}`);
+    const response = await axios.get(`/products?start=${start}&count=${count}&search=${search}&category=${category}`);
+    console.log(response.data)
     return response.data;
   } catch (error) {
      return thunkAPI.rejectWithValue(error.response.data);
