@@ -32,6 +32,7 @@ export default function AppRouting() {
       <Route path='login' element={<Login />} />
       <Route path='register' element={<Signup />} />
       <Route path='/forgetpassword' element={<ForgetPassword />} />
+      <Route path='/reset-password/:token' element='' />
 
      
     </Routes>

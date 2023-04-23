@@ -57,4 +57,13 @@ export const forgetPassword = async(data)=>{
   }
 }
 
+export const logout =createAsyncThunk('users/logout', async(thunkAPI)=>{
+  try {
+    const response = await axios.get('/session/logout');
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data);
+  }
+} );
+
 // thunkApi : an object containing all of the parameters that are normally passed to a Redux thunk function

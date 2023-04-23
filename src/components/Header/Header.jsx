@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./header.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Hamburger from "../Hamburger/Hamburger";
-
+import { logout } from "../../features/users/userAction";
 const navLinks = [
   {
     dispaly: "Home",
@@ -29,8 +29,9 @@ export default function Header() {
   const { cart } = useSelector((state) => state.cart);
   const [count, setCount] = useState(cart?.products?.length || 0);
   const [toggleMenu, setToggleMenu] = useState(false);
+  const [dropdownShow, setDropDown] = useState(false);
   const navigate = useNavigate();
-
+  const dispatch = useDispatch();
   useEffect(() => {
     setCount(cart?.products?.length || 0);
   }, [cart, userinfo]);
@@ -43,6 +44,11 @@ export default function Header() {
   const ToggleHamburger = () => {
     setToggleMenu(!toggleMenu);
   };
+
+  const LogOut = async()=>{
+    console.log('hiii')
+    await dispatch(logout());
+  }
   return (
     <>
       <header className=" w-full flex justify-between items-center flex-col bg-darkblue ">
@@ -70,8 +76,16 @@ export default function Header() {
               <i className="ri-menu-line ml-2 " aria-label="open the menu"></i>
             </div>
             {userinfo?.username ? (
+              <div className="relative">
               <div className=" justify-center text-white md:hidden sm:hidden xs:hidden lg:flex">
-                Hi, {userinfo.username}
+               <button onClick={()=>(setDropDown(!dropdownShow))}> {userinfo.username} 
+                <i class="ri-user-line"></i> </button> 
+              </div>
+              <div className={dropdownShow ?'flex fixed flex-col min-w-min bg-white z-50 p-3': 'hidden'}>
+                <a className="mt-2">Profile</a>
+                <a className="mt-2" onClick={LogOut}>LogOut</a>
+                <a className="mt-2">Settings</a>
+              </div>
               </div>
             ) : (
               <>

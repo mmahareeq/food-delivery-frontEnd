@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signup, login, isLogin } from './userAction';
+import { signup, login, isLogin, logout } from './userAction';
 
 const initialState = {
     userinfo: {},
@@ -59,6 +59,11 @@ const userSlice = createSlice({
         .addCase(isLogin.fulfilled, (state, action)=>{
             state.userinfo = action.payload;
             state.success= true;
+            state.loading = false;
+        })
+        .addCase(logout.fulfilled, (state, action)=>{
+            state.userinfo = {};
+            state.success = true;
             state.loading = false;
         })
     }
