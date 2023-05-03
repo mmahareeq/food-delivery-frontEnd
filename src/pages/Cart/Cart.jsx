@@ -23,7 +23,7 @@ export default function Cart() {
                       <h5>{item.product.title}</h5>
                       <p>{item.product.price} $</p>
                       <div> </div>
-                      <div><i class="ri-delete-bin-line text-red"></i></div>
+                      <div><i className="ri-delete-bin-line text-red"></i></div>
                     </div>
                   </div>
                 );

@@ -10,15 +10,15 @@ export default function Service() {
      </div>
      <div className='flex gap-4 flex-wrap'>
         <div className='border-4 border-gray flex flex-col p-3 items-center'>
-        <i class="ri-calendar-2-line text-softorange text-2xl"></i>
+        <i className="ri-calendar-2-line text-softorange text-2xl"></i>
           <p>Opened 24/7</p>
         </div>
         <div className='border-4 border-gray flex flex-col p-3 items-center'>
-        <i class="ri-book-read-line text-softorange text-2xl	"></i>
+        <i className="ri-book-read-line text-softorange text-2xl	"></i>
             <p>Special Menu </p>
         </div>
         <div className='border-4 border-gray flex flex-col p-3 items-center'>
-        <i class="ri-motorbike-line text-softorange text-2xl	"></i>
+        <i className="ri-motorbike-line text-softorange text-2xl	"></i>
            <div>Home Delivery</div>
         </div>
      </div>

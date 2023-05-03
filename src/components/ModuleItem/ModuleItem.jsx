@@ -45,7 +45,7 @@ export default function ModuleItem(props) {
                 {/*header*/}
                 <button onClick={() => setShowModel(false)}>
                   {" "}
-                  <i class="ri-close-circle-line close-icon"></i>
+                  <i className="ri-close-circle-line close-icon"></i>
                 </button>
                 {/*body*/}
                 <div className="relative p-6 flex-auto model">

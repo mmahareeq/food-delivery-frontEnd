@@ -7,9 +7,9 @@ export default function Footer() {
       <div className=" container flex justify-between">
         <img src={logo} className="w-36"></img>
         <div className="icons self-center flex gap-3">
-          <i class="ri-facebook-circle-fill"></i>
-          <i class="ri-instagram-fill"></i>
-          <i class="ri-pinterest-fill"></i>
+          <i className="ri-facebook-circle-fill"></i>
+          <i className="ri-instagram-fill"></i>
+          <i className="ri-pinterest-fill"></i>
         </div>
       </div>
       <div className="flex flex-row flex-wrap justify-between mt-4  container">

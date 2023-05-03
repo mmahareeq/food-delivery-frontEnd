@@ -115,13 +115,13 @@ export default function ListItem() {
                         onClick={() => editItem(data._id)}
                         className="text-yallow mr-2"
                       >
-                        <i class="ri-pencil-line "></i>
+                        <i className="ri-pencil-line "></i>
                       </button>
                       <button
                         onClick={() => showModel(data._id)}
                         className="text-red"
                       >
-                        <i class="ri-delete-bin-line"></i>
+                        <i className="ri-delete-bin-line"></i>
                       </button>
                     </td>
                   </tr>
@@ -145,8 +145,8 @@ export default function ListItem() {
               >
                 <div className="relative  h-25 flex justify-center">
                   <div className="relative bg-white rounded-lg shadow">
-                    <div class="p-6 text-center">
-                      <h3 class="mb-5 text-lg font-normal">
+                    <div className="p-6 text-center">
+                      <h3 className="mb-5 text-lg font-normal">
                         Are you sure you want to delete this item?
                       </h3>
                       <button

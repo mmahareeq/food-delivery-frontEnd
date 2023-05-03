@@ -79,7 +79,7 @@ export default function Header() {
               <div className="relative">
               <div className=" justify-center text-white md:hidden sm:hidden xs:hidden lg:flex">
                <button onClick={()=>(setDropDown(!dropdownShow))}> {userinfo.username} 
-                <i class="ri-user-line"></i> </button> 
+                <i className="ri-user-line"></i> </button> 
               </div>
               <div className={dropdownShow ?'flex fixed flex-col min-w-min bg-white z-50 p-3': 'hidden'}>
                 <a className="mt-2">Profile</a>
@@ -125,9 +125,9 @@ export default function Header() {
             })}
           </nav>
           <div className="icons self-center flex gap-3">
-          <i class="ri-facebook-circle-fill"></i>
-          <i class="ri-instagram-fill"></i>
-          <i class="ri-pinterest-fill"></i>
+          <i className="ri-facebook-circle-fill"></i>
+          <i className="ri-instagram-fill"></i>
+          <i className="ri-pinterest-fill"></i>
         </div>
         </div>
       </header>
