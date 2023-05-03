@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../../api/axios'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const signup = createAsyncThunk('users/signup', async ({ username, email, password, confirmPassword }, thunkAPI) => {
