@@ -25,8 +25,8 @@ export default function CategoryList() {
   return (
     <div>
         <ul className='flex flex-row gap-1 m-0 p-0'>
-          {categories.map((item)=>{
-            return (<button className={categorySelected === item.name  ? 'border-2 border-softorange  p-2  hover:opacity-80': 'border-2 border-lightgray p-2  hover:opacity-80'} onClick={()=>filterOnCategory(item.name)}>{item.name}</button>)
+          {categories.map((item, index)=>{
+            return (<button key={index} className={categorySelected === item.name  ? 'border-2 border-softorange  p-2  hover:opacity-80': 'border-2 border-lightgray p-2  hover:opacity-80'} onClick={()=>filterOnCategory(item.name)}>{item.name}</button>)
           })}
         </ul>
     </div>
