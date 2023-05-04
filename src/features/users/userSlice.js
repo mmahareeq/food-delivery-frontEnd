@@ -22,8 +22,8 @@ const userSlice = createSlice({
         })
         .addCase(signup.pending, (state , action)=>{
             state.error = false;
-            state.loading = true;
-            
+            state.loading = false;
+        
         })
         .addCase(signup.rejected, (state , action)=>{
             state.error = action.error;

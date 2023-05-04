@@ -70,7 +70,7 @@ export default function Home() {
 
           <div className="flex flex-col  lg:w-3/5 mt-5">
             {items.map((item, index) => {
-              if (index < 5) return (<div className="flex flex-row  align-items-center justify-content-evenly ">
+              if (index < 5) return (<div key={index} className="flex flex-row  align-items-center justify-content-evenly ">
               <div className="flex flex-row align-items-center mb-2">
               <img src={item.img} className="rounded-circle w-24 h-28 "></img>
               
@@ -78,8 +78,7 @@ export default function Home() {
               <p className="border-b-2 mb-4 border-dotted w-80 border-b-gray	"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
               </div>
               <p className="mb-0 text-gray">{item.price} $</p>
-              
-              
+
                               
               </div>)
             })}

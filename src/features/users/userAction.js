@@ -3,6 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 
 export const signup = createAsyncThunk('users/signup', async ({ username, email, password, confirmPassword }, thunkAPI) => {
   try {
+    console.log('ssdlkfjdklj')
     const response = await axios.post('/session/signup',
       { username, email, password, confirmPassword },
       {
@@ -40,7 +41,6 @@ export const login = createAsyncThunk('users/login', async ({  password, email, 
 export const isLogin = createAsyncThunk('users/session', async (thunkAPI)=> {
   try {
     const response = await axios.get('/session/');
-    console.log(response)
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);

@@ -15,10 +15,10 @@ export default function Signup() {
   );
   const nevigate = useNavigate();
   const initValues = {
-    username: null,
-    email: null,
-    password: null,
-    confirmPassword: null,
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   };
 
   const validate = (values) => {
@@ -46,10 +46,10 @@ export default function Signup() {
   const formik = useFormik({
     initialValues: initValues,
     validate,
-    onSubmit: (values) => {
+    onSubmit: (values) => { 
       dispatch(signup(values)).unwrap();
     },
-    isInitialValid: (values) => console.log(values),
+    
   });
   useEffect(() => {
     if (success) {
