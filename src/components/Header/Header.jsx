@@ -99,7 +99,7 @@ export default function Header() {
         </div>
         <div className="p-3 text-white  w-full mt-1 flex justify-between container border-b border-b-gray">
           <nav className=" lg:flex justify-center space-x-4 md:hidden sm:hidden xs:hidden ">
-            {navLinks.map((item, index) => {
+            {navLinks.current.map((item, index) => {
               return (
                 <NavLink
                   key={index}
