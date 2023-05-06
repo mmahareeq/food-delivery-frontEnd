@@ -1,30 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "./header.css";
 import { useSelector, useDispatch } from "react-redux";
 import Hamburger from "../Hamburger/Hamburger";
 import { logout } from "../../features/users/userAction";
-const navLinks = [
-  {
-    dispaly: "Home",
-    path: "/",
-  },
-  {
-    dispaly: "Cart",
-    path: "/cart",
-  },
-  {
-    dispaly: "Menu",
-    path: "/menu",
-  },
-  {
-    dispaly: "Contact",
-    path: "/contact",
-  },
-];
+import { userHeader, adminHeader } from "../../utils/Contents";
+
 
 export default function Header() {
+  const navLinks =  useRef(userHeader);
   const { userinfo } = useSelector((state) => state.users);
   const { cart } = useSelector((state) => state.cart);
   const [count, setCount] = useState(cart?.products?.length || 0);
@@ -34,6 +19,9 @@ export default function Header() {
   const dispatch = useDispatch();
   useEffect(() => {
     setCount(cart?.products?.length || 0);
+    if( userinfo.role === 'admin'){
+        navLinks.current = adminHeader;
+    }
   }, [cart, userinfo]);
 
   const moveToCart = (event) => {

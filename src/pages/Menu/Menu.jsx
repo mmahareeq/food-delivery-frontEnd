@@ -27,12 +27,16 @@ export default function Menu() {
             < CategoryList/>
             <input type='text' placeholder='Search'  onInput={SearchMethod} className='w-25 h-10' />
         </div>
-        <div className='flex flex-row flex-wrap	gap-3 container'>
+        {
+          items.length == 0 ? <div>There are no dishes</div> : 
+          <div className='flex flex-row flex-wrap	gap-3 container'>
            {items.map((item, index)=>{
             return <CardItem item={item}></CardItem>
            })}
            
         </div>
+        }
+        
     </div>
   )
 }
