@@ -3,6 +3,7 @@ import { addNewItem, getAllItem } from './ItemAction';
 
 const initialState = {
     items: [],
+    count: 0,
     loading: false,
     error: '',
     success: false,
@@ -26,6 +27,7 @@ const itemSlice = createSlice({
         .addCase(getAllItem.fulfilled, (state, action)=>
         {   
             state.items = [...action.payload[0].products];
+            state.count = action.payload[0].count[0]?.total || 0;
             state.success= true;
             state.error = false;
             state.loading = false;
