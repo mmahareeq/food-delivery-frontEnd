@@ -1,40 +1,125 @@
-import React from 'react'
+import React, { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Home from './components/Home/Home';
-import Login from './components/Login/Login';
-import Signup from './components/Signup/Signup';
-import Layout from './pages/layout/Layout';
-import AddItem from './features/items/AddItem/AddItem';
-import ListItem from './features/items/ListItem/ListItem';
-import ForgetPassword from './components/ForgetPassword/ForgetPassword';
-import Menu from './pages/Menu/Menu';
-import Contact from './pages/Contact/Contact';
-import Cart from './pages/Cart/Cart';
-import RequiredAuth from './components/RequiredAuth/index';
-import { useSelector } from 'react-redux';
+
+import { useSelector } from "react-redux";
+const Home = lazy(() => import("./components/Home/Home"));
+const Login = lazy(() => import("./components/Login/Login"));
+const Signup = lazy(() => import("./components/Signup/Signup"));
+const Layout = lazy(() => import("./pages/layout/Layout"));
+const AddItem = lazy(() => import("./features/items/AddItem/AddItem"));
+const ListItem = lazy(() => import("./features/items/ListItem/ListItem"));
+const ForgetPassword = lazy(() =>
+  import("./components/ForgetPassword/ForgetPassword")
+);
+const Menu = lazy(() => import("./pages/Menu/Menu"));
+const Contact = lazy(() => import("./pages/Contact/Contact"));
+const Cart = lazy(() => import("./pages/Cart/Cart"));
+const RequiredAuth = lazy(() => import("./components/RequiredAuth/index"));
+const Spinner = lazy(() => import("./shared/Spinner/Spinner"));
 
 export default function AppRouting() {
-  const {userinfo} = useSelector(state=> state.users);
+  const { userinfo } = useSelector((state) => state.users);
   return (
     <Routes>
-      <Route path='/' element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path='menu' element={<Menu />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/cart' element={<Cart />} />
+      <Route
+        path="/"
+        element={
+          <Suspense fallback={<Spinner />}>
+            <Layout />
+          </Suspense>
+        }
+      >
+        <Route
+          index
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Home />
+            </Suspense>
+          }
+        />
+        <Route
+          path="menu"
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Menu />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Contact />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <Suspense fallback={<Spinner />}>
+              <Cart />
+            </Suspense>
+          }
+        />
 
-        <Route element={<RequiredAuth allowRole='admin' />}>
-          <Route path='item' element={<ListItem />} />
-            <Route path='item/add' element={<AddItem></AddItem>} />
-            <Route path='item/:id' element={<AddItem></AddItem>} />
-           </Route>
+        <Route
+          element={
+            <Suspense fallback={<Spinner />}>
+              <RequiredAuth allowRole="admin" />
+            </Suspense>
+          }
+        >
+          <Route
+            path="item"
+            element={
+              <Suspense fallback={<Spinner />}>
+                <ListItem />
+              </Suspense>
+            }
+          />
+          <Route
+            path="item/add"
+            element={
+              <Suspense fallback={<Spinner />}>
+                <AddItem></AddItem>
+              </Suspense>
+            }
+          />
+          <Route
+            path="item/:id"
+            element={
+              <Suspense fallback={<Spinner />}>
+                <AddItem></AddItem>
+              </Suspense>
+            }
+          />
         </Route>
-      <Route path='login' element={<Login />} />
-      <Route path='register' element={<Signup />} />
-      <Route path='/forgetpassword' element={<ForgetPassword />} />
-      <Route path='/reset-password/:token' element='' />
-
-     
+      </Route>
+      <Route
+        path="login"
+        element={
+          <Suspense fallback={<Spinner />}>
+            <Login />
+          </Suspense>
+        }
+      />
+      <Route
+        path="register"
+        element={
+          <Suspense fallback={<Spinner />}>
+            <Signup />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/forgetpassword"
+        element={
+          <Suspense fallback={<Spinner />}>
+            <ForgetPassword />
+          </Suspense>
+        }
+      />
+      <Route path="/reset-password/:token" element="" />
     </Routes>
-  )
+  );
 }

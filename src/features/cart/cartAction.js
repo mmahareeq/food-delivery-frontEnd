@@ -2,7 +2,7 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
-export const getCart = createAsyncThunk('cart/getCart', async(thunkAPI) =>{
+export const Cart = createAsyncThunk('cart/getCart', async(thunkAPI) =>{
     try {
         const response = await axios.get('/carts');
         return response.data.cart;

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getCart, addToCart } from './cartAction';
+import { Cart, addToCart } from './cartAction';
 
 const initialState = {
     cart: [],
@@ -14,11 +14,16 @@ const cartSlice = createSlice({
     initialState,
     reducers:{},
     extraReducers(builder){
-        builder.addCase(getCart.fulfilled, (state , action)=>{
+        builder.addCase(Cart.fulfilled, (state , action)=>{
             state.cart = action.payload;
             state.loading = false;
             state.error = false;
             state.success = true;
+        })
+        .addCase(Cart.pending, (state , action)=>{
+            state.loading = true;
+            state.error = false;
+            state.success = false;
         })
         .addCase(addToCart.pending, (state , action)=>{
             state.loading = true;

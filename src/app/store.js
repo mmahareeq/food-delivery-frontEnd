@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { isLogin } from "../features/users/userAction";
 import userReducer from '../features/users/userSlice';
 import cartReducer from '../features/cart/cartSlice';
-import { getCart } from "../features/cart/cartAction";
+import { Cart } from "../features/cart/cartAction";
 import itemReducer from '../features/items/itemSlice';
 import categoryReducer from '../features/categories/categorySlice';
 export const store = configureStore({
@@ -15,4 +15,4 @@ export const store = configureStore({
 });
 
 store.dispatch(isLogin())
-store.dispatch(getCart())
+store.dispatch(Cart())

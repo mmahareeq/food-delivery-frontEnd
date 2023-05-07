@@ -16,7 +16,7 @@ export default function Home() {
     dispatch(
       getAllItem({
         start: 1,
-        count: 10,
+        count: 5,
         search: "",
         category: ''
       })
