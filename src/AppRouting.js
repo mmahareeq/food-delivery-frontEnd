@@ -16,6 +16,7 @@ const Contact = lazy(() => import("./pages/Contact/Contact"));
 const Cart = lazy(() => import("./pages/Cart/Cart"));
 const RequiredAuth = lazy(() => import("./components/RequiredAuth/index"));
 const Spinner = lazy(() => import("./shared/Spinner/Spinner"));
+const NewPassword = lazy(()=>import("./components/NewPassword/index"));
 
 export default function AppRouting() {
   const { userinfo } = useSelector((state) => state.users);
@@ -119,7 +120,11 @@ export default function AppRouting() {
           </Suspense>
         }
       />
-      <Route path="/reset-password/:token" element="" />
+      <Route path="/reset-password/:token" element={
+        <Suspense fallback={<Spinner />}>
+           <NewPassword />
+        </Suspense>
+      } />
     </Routes>
   );
 }

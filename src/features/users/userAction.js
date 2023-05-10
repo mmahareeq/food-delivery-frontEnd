@@ -66,4 +66,13 @@ export const logout =createAsyncThunk('users/logout', async(thunkAPI)=>{
   }
 } );
 
+export const newPassword= async(data, token)=>{
+   try {
+     const response = await axios.put(`/session/updatepassword/${token}`, data);
+     return response.data;
+   } catch (error) {
+      return new Error(error);
+   }
+}
+
 // thunkApi : an object containing all of the parameters that are normally passed to a Redux thunk function
