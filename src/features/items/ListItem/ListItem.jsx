@@ -27,7 +27,7 @@ export default function ListItem() {
   };
 
   useEffect(() => {
-    dispatch(getAllItem({ start: currentPage, count: 10, search: search }))
+    dispatch(getAllItem({ start: 1, count: 10, search: search, category: '' }))
       .then((data) => {
         setLenItem(data.payload.length);
       })
@@ -105,8 +105,8 @@ export default function ListItem() {
                     className="text-center h-10 bg-white border dark:bg-gray-800 dark:border-gray-700"
                   >
                     <td>{data.title}</td>
-                    <td>{data.price}</td>
-                    <td>{data.discount}</td>
+                    <td>{data.price} $</td>
+                    <td>{data.discount} % </td>
                     <td>
                       <a href={data.img}> link</a>{" "}
                     </td>
