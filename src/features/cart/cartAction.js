@@ -22,10 +22,10 @@ export const addToCart = createAsyncThunk('cart/addToCart', async(data, thunkAPI
     }
 });
 
-export const deleteItemFromCart = createAsyncThunk('cart/delete', async(data, thunkAPI)=>{
+export const deleteItemFromCart = createAsyncThunk('cart/delete', async(id, thunkAPI)=>{
     try {
         
-        const response = await axios.delete('/carts', data);
+        const response = await axios.delete(`/carts?productId=${id}`, );
         return response.data;
     } catch (error) {
         return thunkAPI.rejectWithValue(error);
